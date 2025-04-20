@@ -8,12 +8,15 @@
         th { background-color: #f0f0f0; }
         .button { display: inline-block; padding: 8px 12px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; margin-right: 5px; }
         .success { color: green; margin-top: 10px; }
+        .danger{color: red; margin-top: 10px; }
     </style>
 @section('content')
 <div class="container">
     <h1>Запросы на выплату</h1>
     @if (session('success'))
         <div class="success">{{ session('success') }}</div>
+    @else
+        <div class="danger">{{ session('error') }}</div>
     @endif
     @if ($withdrawals->isEmpty())
         <p>Нет ожидающих запросов на выплату.</p>
